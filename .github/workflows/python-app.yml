@@ -32,6 +32,7 @@ jobs:
         # pip install coverage codecov
         coverage run -m pytest
         coverage xml
+        continue-on-error: true
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
     - name: Test with pytest
