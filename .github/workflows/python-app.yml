@@ -31,10 +31,13 @@ jobs:
       run: |
         # pip install coverage codecov
         coverage run -m pytest test_add.py --doctest-modules || true
+        TEST_RESULT=$?  # Capture the exit code from pytest
         coverage xml
         coverage html
-      continue-on-error: true
+        exit $TEST_RESULT
+      # continue-on-error: false
     - name: Upload coverage to Codecov
+      if: success() || failure()  # Ensure this runs regardless of test results
       uses: codecov/codecov-action@v3
     - name: Always upload test results
       if: always()
