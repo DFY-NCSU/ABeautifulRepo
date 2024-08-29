@@ -35,7 +35,7 @@ jobs:
         coverage xml
         coverage html
         exit $TEST_RESULT
-      # continue-on-error: false
+      continue-on-error: false
     - name: Upload coverage to Codecov
       if: success() || failure()  # Ensure this runs regardless of test results
       uses: codecov/codecov-action@v3
