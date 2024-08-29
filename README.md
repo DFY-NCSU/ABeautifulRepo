@@ -1,5 +1,5 @@
 ![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app.yml/badge.svg)
-[![codecov](https://codecov.io/github/TheFatBlue/ABeautifulRepo-test/graph/badge.svg?token=UEI8Y05X61)](https://codecov.io/github/TheFatBlue/ABeautifulRepo-test)
+[![codecov](https://codecov.io/github/DFY-NCSU/ABeautifulRepo/graph/badge.svg?token=UEI8Y05X61)](https://codecov.io/github/DFY-NCSU/ABeautifulRepo)
 
 - language python
 - license MIT
