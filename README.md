@@ -7,4 +7,4 @@
 
 ### **Notice**
 
-Our GitHub Actions workflow is set with `continue-on-error: true` for testing steps. This means that even if some tests fail (like required in the step 10), the workflow will still show as "success" to ensure other steps are executed. Please review the test results for details on any failures.
+Our GitHub Actions workflow is set with `continue-on-error: true` for testing steps. This means that even if some tests fail (like required in the step 10), the workflow will still show as "success" to ensure other steps are executed. Please review the test results for details on any failures
