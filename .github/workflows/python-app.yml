@@ -5,9 +5,9 @@ name: Python application
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ "badge-debug-sf" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "badge-debug-sf" ]
 
 permissions:
   contents: read
