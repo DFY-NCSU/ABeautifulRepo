@@ -29,9 +29,7 @@ jobs:
         pip install -r requirements.txt
     - name: Run tests with coverage
       run: |
-        # pip install coverage codecov
-        coverage run -m pytest
-        coverage xml
+        pytest --cov
       continue-on-error: true
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
