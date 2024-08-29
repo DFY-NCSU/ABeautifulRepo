@@ -32,7 +32,9 @@ jobs:
         pytest --cov
       continue-on-error: true
     - name: Upload coverage to Codecov
-      uses: codecov/codecov-action@v4
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ CODECOV_TOKEN=81e60ee2-bfdd-4e09-91f4-70f47613ff40 }}
     - name: Test with pytest
       run: |
         pytest test_add.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
