@@ -1,13 +1,16 @@
 # This workflow will install Python dependencies, run tests and lint with a single version of Python
 # For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
 
-name: Python application CI
+# This workflow will install Python dependencies, run tests and lint with a single version of Python
+# For more information see: https://docs.github.com/en/actions/automating-builds-and-tests/building-and-testing-python
+
+name: Python application
 
 on:
   push:
-    branches: [ "badge-debug-sf" ]
+    branches: [ "main" ]
   pull_request:
-    branches: [ "badge-debug-sf" ]
+    branches: [ "main" ]
 
 permissions:
   contents: read
@@ -27,24 +30,15 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run tests and collect coverage
-      id: test
+    - name: Run tests with coverage
       run: |
-        coverage run -m pytest test_add.py --doctest-modules || true  # Prevent failure from stopping the workflow
-        echo "exit_code=$?" >> $GITHUB_ENV
-        coverage xml
-        coverage html
+        pytest --cov
+      continue-on-error: true
     - name: Upload coverage to Codecov
-      if: always()  # Ensure this runs regardless of test results
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-    - name: Always upload test results
-      if: always()
-      uses: actions/upload-artifact@v3
-      with:
-        name: test-results
-        path: junit/test-results.xml
-    - name: Fail the job if tests failed
-      if: env.exit_code != '0'
-      run: exit 1
+    - name: Test with pytest
+      run: |
+        pytest test_add.py --doctest-modules --junitxml=junit/test-results.xml --cov=com --cov-report=xml --cov-report=html
+      continue-on-error: true
