@@ -27,7 +27,7 @@ jobs:
       run: |
         pip install coverage pytest
         coverage run -m pytest test_add.py --doctest-modules
-        echo "tests_exit_code=$?" >> $GITHUB_OUTPUT
+        echo "tests_exit_code=$?" >> $GITHUB_ENV
         coverage xml
         coverage html
       continue-on-error: true
@@ -45,8 +45,8 @@ jobs:
     - name: Check test results
       if: always()
       run: |
-        if [ "${{ steps.run_tests.outputs.tests_exit_code }}" != "0" ]; then
-          echo "Tests failed"
+        if [ "${{ env.tests_exit_code }}" != "0" ]; then
+          echo "Tests failed with exit code ${{ env.tests_exit_code }}"
           exit 1
         else
           echo "Tests passed"
