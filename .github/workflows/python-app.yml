@@ -34,7 +34,7 @@ jobs:
         TEST_RESULT=$?  # Capture the exit code from pytest
         coverage xml
         coverage html
-        exit $TEST_RESULT
+        exit 0
       continue-on-error: false
     - name: Upload coverage to Codecov
       if: success() || failure()  # Ensure this runs regardless of test results
@@ -47,3 +47,6 @@ jobs:
       with:
         name: test-results
         path: junit/test-results.xml
+    - name: Fail the workflow if tests failed
+      if: env.TEST_RESULT != '0'
+      run: exit 1  # Fail the job if tests failed
