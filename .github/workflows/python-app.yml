@@ -30,7 +30,7 @@ jobs:
     - name: Run tests and collect coverage
       run: |
         # pip install coverage codecov
-        coverage run -m pytest test_add.py --doctest-modules || true
+        coverage run -m pytest test_add.py --doctest-modules
         TEST_RESULT=$?  # Capture the exit code from pytest
         coverage xml
         coverage html
