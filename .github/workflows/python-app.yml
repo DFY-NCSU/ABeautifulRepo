@@ -8,9 +8,11 @@ on:
 
 permissions:
   contents: read
+  # Add write permission for badges
+  badges: write
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
@@ -22,32 +24,27 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-    - name: Run tests and collect coverage
-      id: run_tests
-      run: |
-        pip install coverage pytest
-        coverage run -m pytest test_add.py --doctest-modules
-        echo "tests_exit_code=$?" >> $GITHUB_ENV
-        coverage xml
-        coverage html
-      continue-on-error: true
+        pip install pytest pytest-md
+    - name: Run tests with pytest
+      run: pytest test_add.py --doctest-modules --md-report --md-report-output pytest_report.md
+    - name: Create Pytest Badge
+      uses: jaywcjlove/action-badges@v1.5.0
+      with:
+        style: flat
+        label: pytest
+        status: ${{ job.status }}
+        icon: jest
+        file: pytest-badge.svg
     - name: Upload coverage to Codecov
       if: always()
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-    - name: Always upload test results
+    - name: Upload test results
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: test-results
-        path: junit/test-results.xml
-    - name: Check test results
-      if: always()
-      run: |
-        if [ "${{ env.tests_exit_code }}" != "0" ]; then
-          echo "Tests failed with exit code ${{ env.tests_exit_code }}"
-          exit 1
-        else
-          echo "Tests passed"
-        fi
+        path: |
+          pytest_report.md
+          pytest-badge.svg
