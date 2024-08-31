@@ -8,8 +8,6 @@ on:
 
 permissions:
   contents: read
-  # Add write permission for badges
-  badges: write
 
 jobs:
   test:
@@ -24,27 +22,33 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest pytest-md
+        pip install pytest
     - name: Run tests with pytest
-      run: pytest test_add.py --doctest-modules --md-report --md-report-output pytest_report.md
-    - name: Create Pytest Badge
-      uses: jaywcjlove/action-badges@v1.5.0
+      run: pytest test_add.py --doctest-modules
+    - name: Generate Pytest Badge
+      run: |
+        if [ $? -eq 0 ]; then
+          echo "pytest,passing,green" > badge.txt
+        else
+          echo "pytest,failing,red" > badge.txt
+        fi
+    - name: Create Badge
+      uses: emibcn/badge-action@v2.0.2
       with:
-        style: flat
-        label: pytest
+        label: 'pytest'
         status: ${{ job.status }}
-        icon: jest
-        file: pytest-badge.svg
+        color: 'blue'
+        path: badge.svg
     - name: Upload coverage to Codecov
       if: always()
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
-    - name: Upload test results
+    - name: Upload test results and badge
       if: always()
       uses: actions/upload-artifact@v3
       with:
         name: test-results
         path: |
-          pytest_report.md
-          pytest-badge.svg
+          badge.svg
+          badge.txt
