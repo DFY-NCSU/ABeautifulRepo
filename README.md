@@ -1,4 +1,4 @@
-![Pytest](https://github.com/DFY-NCSU/ABeautifulRepo/badge.svg??branch=badge-debug-sf)
+![Pytest](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app.yml/badge.svg??branch=badge-debug-sf)
 [![codecov](https://codecov.io/github/DFY-NCSU/ABeautifulRepo/graph/badge.svg?token=R5ERFINN0D)](https://codecov.io/github/DFY-NCSU/ABeautifulRepo)
 
 - language python
