@@ -2,10 +2,10 @@ import rand
 
 
 def mergeSort(arr):
-    if (len(arr) == 1):
+    if len(arr) <= 1:  
         return arr
 
-    half = len(arr)//2
+    half = len(arr) // 2
 
     return recombine(mergeSort(arr[:half]), mergeSort(arr[half:]))
 
@@ -14,21 +14,30 @@ def recombine(leftArr, rightArr):
     leftIndex = 0
     rightIndex = 0
     mergeArr = [None] * (len(leftArr) + len(rightArr))
+    
+    mergeIndex = 0
+
     while leftIndex < len(leftArr) and rightIndex < len(rightArr):
         if leftArr[leftIndex] < rightArr[rightIndex]:
-            rightIndex += 1
-            mergeArr[leftIndex + rightIndex] = leftArr[leftIndex]
-        else:
+            mergeArr[mergeIndex] = leftArr[leftIndex]
             leftIndex += 1
-            mergeArr[leftIndex + rightIndex] = rightArr[rightIndex]
+        else:
+            mergeArr[mergeIndex] = rightArr[rightIndex]
+            rightIndex += 1
+        mergeIndex += 1
 
-    for i in range(rightIndex, len(rightArr)):
-        mergeArr[leftIndex + rightIndex] = rightArr[i]
+    while leftIndex < len(leftArr):
+        mergeArr[mergeIndex] = leftArr[leftIndex]
+        leftIndex += 1
+        mergeIndex += 1
 
-    for i in range(leftIndex, len(leftArr)):
-        mergeArr[leftIndex + rightIndex] = leftArr[i]
+    while rightIndex < len(rightArr):
+        mergeArr[mergeIndex] = rightArr[rightIndex]
+        rightIndex += 1
+        mergeIndex += 1
 
     return mergeArr
+
 
 
 arr = rand.random_array([None] * 20)
