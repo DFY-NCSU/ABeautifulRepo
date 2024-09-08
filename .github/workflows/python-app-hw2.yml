@@ -1,0 +1,37 @@
+name: Python application
+
+on:
+  push:
+    branches:
+      - '!main'
+      - '**'   
+  pull_request:
+    branches: [ "hw2" ]
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v4
+    - name: Set up Python 3.12
+      uses: actions/setup-python@v3
+      with:
+        python-version: "3.12.1"
+    - name: Install dependencies
+      run: |
+        python -m pip install --upgrade pip
+        pip install -r requirements_hw2.txt
+    - name: Format code with autopep8
+      run: autopep8 --in-place --aggressive hw2/hw2_debugging.py hw2/rand.py
+    - name: Lint with pyflakes
+      run: pyflakes hw2/hw2_debugging.py hw2/rand.py
+    - name: Type check with pyright
+      run: pyright hw2/hw2_debugging.py hw2/rand.py
+    - name: Test with pytest
+      run: |
+        pytest test_add.py --doctest-modules --junitxml=junit/test-results.xml
