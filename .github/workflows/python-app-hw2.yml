@@ -34,4 +34,4 @@ jobs:
       run: pyright hw2/hw2_debugging.py hw2/rand.py
     - name: Test with pytest
       run: |
-        pytest test_add.py --doctest-modules --junitxml=junit/test-results.xml
+        pytest hw2/test_mergeSort.py
