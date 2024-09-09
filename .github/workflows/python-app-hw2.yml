@@ -35,3 +35,11 @@ jobs:
     - name: Test with pytest
       run: |
         pytest hw2/test_mergeSort.py
+    - name: Run tests with coverage
+      run: |
+        pytest --cov
+      continue-on-error: false
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        token: ${{ secrets.CODECOV_TOKEN }}
