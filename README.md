@@ -11,7 +11,7 @@ Welcome to the repository for **Homework 2** of the DFY-NCSU project. This repos
 
 ## Project Overview
 
-This repository contains the implementation of algorithms and solutions required for Homework 2. The tasks focus on (provide a brief overview of what the homework is about). The repo is collaboratively maintained by three contributors.
+This repository contains the implementation of solutions required for Homework 2.
 
 ## Directory Structure
 
@@ -19,7 +19,6 @@ This repository contains the implementation of algorithms and solutions required
 ABeautifulRepo/
 ├── src/                  # Source code for the homework
 ├── tests/                # Unit tests for the project
-├── docs/                 # Documentation and reports
 └── README.md             # Project README file
 ```
 
