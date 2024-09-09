@@ -17,6 +17,10 @@ Welcome to the repository for **Homework 2** of the DFY-NCSU project. This repos
 
 This repository contains the implementation of solutions required for Homework 2.
 
+## Key Features
+
+The key feature in this work is that we use three static analysis tools, i.e., Pyflakes, Pyright, and Autopep8, to check the form, structure, content of Python files. You can click the corresponding badges to see specific checking results.
+
 ## Directory Structure
 
 ```
