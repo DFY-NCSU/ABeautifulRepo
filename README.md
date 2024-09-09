@@ -1,7 +1,7 @@
 ![autopep8](https://img.shields.io/badge/code%20style-autopep8-yellowgreen)
 ![pyflakes](https://img.shields.io/badge/lint-pyflakes-green)
 ![pyright](https://img.shields.io/badge/type%20checker-pyright-blue)
-![[Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml)
+[![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml)
 
 
 # ABeautifulRepo: Homework 2
