@@ -2,7 +2,7 @@
 ![pyflakes](https://img.shields.io/badge/lint-pyflakes-green)
 ![pyright](https://img.shields.io/badge/type%20checker-pyright-blue)
 [![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml)
-[![codecov](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/tree/hw2/graph/badge.svg?token=R5ERFINN0D)](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/tree/hw2)
+[![codecov](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/branch/hw2/graph/badge.svg?token=R5ERFINN0D)](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/tree/hw2)
 
 
 # ABeautifulRepo: Homework 2
