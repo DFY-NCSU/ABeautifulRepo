@@ -37,7 +37,7 @@ jobs:
         pytest hw2/test_mergeSort.py
     - name: Run tests with coverage
       run: |
-        pytest --cov hw2
+        pytest --cov hw2/test_mergeSort.py
       continue-on-error: false
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
