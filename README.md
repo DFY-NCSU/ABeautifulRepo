@@ -3,7 +3,7 @@
 [![Platform: Linux](https://img.shields.io/badge/platform-linux-blue.svg)](https://www.linux.org/)
 [![autopep8](https://img.shields.io/badge/code%20style-autopep8-yellowgreen)](https://github.com/DFY-NCSU/ABeautifulRepo/blob/hw2/hw2/post_traces/autopep8_output.txt)
 [![pyflakes](https://img.shields.io/badge/lint-pyflakes-green)](https://github.com/DFY-NCSU/ABeautifulRepo/blob/hw2/hw2/post_traces/pyflakes_output.txt)
-[![pyright](https://img.shields.io/badge/type%20checker-pyright-blue)](https://github.com/DFY-NCSU/ABeautifulRepo/blob/hw2/hw2/post_traces/pyright_output.txt)
+[![pyright](https://img.shields.io/badge/type%20checker-pyright-blue)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml)
 [![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml)
 [![codecov](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/branch/hw2/graph/badge.svg?token=R5ERFINN0D)](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/tree/hw2)
 
