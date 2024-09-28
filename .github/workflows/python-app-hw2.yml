@@ -58,7 +58,7 @@ jobs:
     # Update README.md with the latest run URL
     - name: Update README.md with latest run
       run: |
-        sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
+        sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
 
     # Commit the updated README.md
     - name: Commit and push changes
