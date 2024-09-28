@@ -9,7 +9,7 @@ on:
     branches: [ "hw2" ]
 
 permissions:
-  contents: read
+  contents: write  # Allows us to push changes to the repo
 
 jobs:
   build:
@@ -18,6 +18,10 @@ jobs:
 
     steps:
     - uses: actions/checkout@v4
+      name: Check out the repository
+      with:
+        ref: ${{ github.ref }}
+
     - name: Set up Python 3.12
       uses: actions/setup-python@v3
       with:
@@ -51,15 +55,16 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
 
-    # Capture run_id and create a dynamic badge link
-    - name: Save GitHub Run ID
+    # Update README.md with the latest run URL
+    - name: Update README.md with latest run
       run: |
-        echo "GitHub Run ID: $GITHUB_RUN_ID"
-        echo "![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${GITHUB_RUN_ID})" > badge.md
+        sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
 
-    # Upload the badge link as an artifact or commit it to the repo
-    - name: Upload badge artifact
-      uses: actions/upload-artifact@v3
-      with:
-        name: badge
-        path: badge.md
+    # Commit the updated README.md
+    - name: Commit and push changes
+      run: |
+        git config --global user.name 'github-actions[bot]'
+        git config --global user.email 'github-actions[bot]@users.noreply.github.com'
+        git add README.md
+        git commit -m "Update README.md with the latest run ID"
+        git push origin ${{ github.ref }}
