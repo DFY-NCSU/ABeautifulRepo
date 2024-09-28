@@ -55,10 +55,28 @@ jobs:
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
 
+    - name: Generate pyflakes badge
+      run: |
+        if [[ "${{ steps.pyflakes.outcome }}" == "success" ]]; then
+          echo "PYFLAKES_STATUS=passing-brightgreen" >> $GITHUB_ENV
+        else
+          echo "PYFLAKES_STATUS=failing-red" >> $GITHUB_ENV
+        fi
+
+    - name: Generate pyright badge
+      run: |
+        if [[ "${{ steps.pyright.outcome }}" == "success" ]]; then
+          echo "PYRIGHT_STATUS=passing-brightgreen" >> $GITHUB_ENV
+        else
+          echo "PYRIGHT_STATUS=failing-red" >> $GITHUB_ENV
+        fi
+
     # Update README.md with the latest run URL
     - name: Update README.md with latest run
       run: |
         sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
+        sed -i "s|badge/pyflakes-[^)]*|badge/pyflakes-${{ env.PYFLAKES_STATUS }}|g" README.md
+        sed -i "s|badge/pyright-[^)]*|badge/pyright-${{ env.PYRIGHT_STATUS }}|g" README.md
 
     # Commit the updated README.md
     - name: Commit and push changes
