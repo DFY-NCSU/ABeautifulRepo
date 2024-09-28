@@ -7,7 +7,7 @@
 [![autopep8](https://img.shields.io/badge/code%20style-autopep8-yellowgreen)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086296742)
 
 ### Static Code Analysis Tools
-[![pyflakes](https://img.shields.io/badge/lint-pyflakes-failing-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086296742)
+[![pyflakes](https://img.shields.io/badge/lint-pyflakes-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086296742)
 [![pyright](https://img.shields.io/badge/pyright-passing-brightgreen)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086296742)
 
 ### Workflow and CI Tools
