@@ -2,9 +2,7 @@ name: Python application
 
 on:
   push:
-    branches:
-      - '!main'
-      - '**'   
+    branches: [ "hw2" ]
   pull_request:
     branches: [ "hw2" ]
 
@@ -75,8 +73,7 @@ jobs:
     - name: Update README.md with latest run
       run: |
         sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
-        sed -i "s|badge/lint-pyflakes-[^)]*|badge/lint-pyflakes-${{ env.PYFLAKES_STATUS }}|g" README.md
-        sed -i "s|badge/type%20checker-pyright-[^)]*|badge/type%20checker-pyright-${{ env.PYRIGHT_STATUS }}|g" README.md
+        sed -i "s|(https://img.shields.io/badge/*)|(https://img.shields.io/badge/pyright-${{ env.PYRIGHT_STATUS }})|" README.md
 
     # Commit the updated README.md
     - name: Commit and push changes

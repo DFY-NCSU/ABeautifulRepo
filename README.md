@@ -8,7 +8,7 @@
 
 ### Static Code Analysis Tools
 [![pyflakes](https://img.shields.io/badge/lint-pyflakes-failing-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086055451)
-[![pyright](https://img.shields.io/badge/type%20checker-pyright-failing-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086055451)
+[![pyright](https://img.shields.io/badge/pyright-failing-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086055451)
 
 ### Workflow and CI Tools
 [![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086055451)
