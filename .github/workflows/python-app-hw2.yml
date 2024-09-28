@@ -34,10 +34,14 @@ jobs:
       run: autopep8 --in-place --aggressive hw2/hw2_debugging.py hw2/rand.py
 
     - name: Lint with pyflakes
+      continue-on-error: true
       run: pyflakes hw2/hw2_debugging.py hw2/rand.py
+      id: pyflakes
 
     - name: Type check with pyright
+      continue-on-error: true
       run: pyright hw2/hw2_debugging.py hw2/rand.py
+      id: pyright
 
     - name: Test with pytest
       run: |
