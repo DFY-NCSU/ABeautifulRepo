@@ -22,24 +22,44 @@ jobs:
       uses: actions/setup-python@v3
       with:
         python-version: "3.12.1"
+
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements_hw2.txt
+
     - name: Format code with autopep8
       run: autopep8 --in-place --aggressive hw2/hw2_debugging.py hw2/rand.py
+
     - name: Lint with pyflakes
       run: pyflakes hw2/hw2_debugging.py hw2/rand.py
+
     - name: Type check with pyright
       run: pyright hw2/hw2_debugging.py hw2/rand.py
+
     - name: Test with pytest
       run: |
         pytest hw2/test_mergeSort.py
+
     - name: Run tests with coverage
       run: |
         pytest hw2 --cov
       continue-on-error: false
+
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }}
+
+    # Capture run_id and create a dynamic badge link
+    - name: Save GitHub Run ID
+      run: |
+        echo "GitHub Run ID: $GITHUB_RUN_ID"
+        echo "![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${GITHUB_RUN_ID})" > badge.md
+
+    # Upload the badge link as an artifact or commit it to the repo
+    - name: Upload badge artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: badge
+        path: badge.md
