@@ -4,14 +4,14 @@
 [![Platform: Linux](https://img.shields.io/badge/platform-linux-blue.svg)](https://www.linux.org/)
 
 ### Code Formatting Tools
-[![autopep8](https://img.shields.io/badge/code%20style-autopep8-yellowgreen)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086253653)
+[![autopep8](https://img.shields.io/badge/code%20style-autopep8-yellowgreen)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086272294)
 
 ### Static Code Analysis Tools
-[![pyflakes](https://img.shields.io/badge/lint-pyflakes-failing-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086253653)
-[![pyright](https://img.shields.io/badge/pyright-)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086253653)
+[![pyflakes](https://img.shields.io/badge/lint-pyflakes-failing-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086272294)
+[![pyright](https://img.shields.io/badge/pyright-failing-red)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086272294)
 
 ### Workflow and CI Tools
-[![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086253653)
+[![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086272294)
 [![codecov](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/branch/hw2/graph/badge.svg?token=R5ERFINN0D)](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/tree/hw2)
 
 
