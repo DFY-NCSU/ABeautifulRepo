@@ -60,9 +60,9 @@ jobs:
     - name: Generate pyflakes badge
       run: |
         if [[ "${{ steps.pyflakes.outcome }}" == "success" ]]; then
-          echo "PYFLAKES_STATUS=passing-brightgreen" >> $GITHUB_ENV
+          echo "PYFLAKES_STATUS=green" >> $GITHUB_ENV
         else
-          echo "PYFLAKES_STATUS=failing-red" >> $GITHUB_ENV
+          echo "PYFLAKES_STATUS=red" >> $GITHUB_ENV
         fi
 
     - name: Generate pyright badge
@@ -78,6 +78,7 @@ jobs:
       run: |
         sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
         sed -i "s|(https://img.shields.io/badge/pyright-.*)]|(https://img.shields.io/badge/pyright-${{ env.PYRIGHT_STATUS }})]|" README.md
+        sed -i "s|(https://img.shields.io/badge/lint-pyflakes-.*)]|(https://img.shields.io/badge/lint-pyflakes-${{ env.PYFLAKES_STATUS }})]|" README.md
 
     # Commit the updated README.md
     - name: Commit and push changes
