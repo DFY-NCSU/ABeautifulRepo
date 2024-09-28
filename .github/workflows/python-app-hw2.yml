@@ -75,8 +75,8 @@ jobs:
     - name: Update README.md with latest run
       run: |
         sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
-        sed -i "s|badge/pyflakes-[^)]*|badge/pyflakes-${{ env.PYFLAKES_STATUS }}|g" README.md
-        sed -i "s|badge/pyright-[^)]*|badge/pyright-${{ env.PYRIGHT_STATUS }}|g" README.md
+        sed -i "s|badge/lint-pyflakes-[^)]*|badge/lint-pyflakes-${{ env.PYFLAKES_STATUS }}|g" README.md
+        sed -i "s|badge/type%20checker-pyright-[^)]*|badge/type%20checker-pyright-${{ env.PYRIGHT_STATUS }}|g" README.md
 
     # Commit the updated README.md
     - name: Commit and push changes
