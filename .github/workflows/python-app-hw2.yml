@@ -64,16 +64,16 @@ jobs:
     - name: Generate pyright badge
       run: |
         if [[ "${{ steps.pyright.outcome }}" == "success" ]]; then
-          PYRIGHT_STATUS=passing-brightgreen
+          echo "PYRIGHT_STATUS=passing-brightgreen" >> $GITHUB_ENV
         else
-          PYRIGHT_STATUS=failing-red
+          echo "PYRIGHT_STATUS=failing-red" >> $GITHUB_ENV
         fi
 
     # Update README.md with the latest run URL
     - name: Update README.md with latest run
       run: |
         sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
-        sed -i "s|(https://img.shields.io/badge/pyright-.*)]|(https://img.shields.io/badge/pyright-${{ PYRIGHT_STATUS }})]|" README.md
+        sed -i "s|(https://img.shields.io/badge/pyright-.*)]|(https://img.shields.io/badge/pyright-${{ env.PYRIGHT_STATUS }})]|" README.md
 
     # Commit the updated README.md
     - name: Commit and push changes
