@@ -53,28 +53,23 @@ To set up the project locally, follow these steps:
    cd ABeautifulRepo
    ```
 
-2. Install the necessary dependencies:
-   ```bash
-   # Use a virtual environment (recommended)
-   python3 -m venv venv
-   source venv/bin/activate  # On Windows: venv\Scripts\activate
-
-   # Install dependencies from the requirements file
-   pip install -r requirements.txt
-   ```
-
 ## Usage
 
 To run the project, use the following commands:
 
-- Run the main program:
+- Run the scripts1:
    ```bash
-   python src/main.py
+   bash task1.sh
    ```
 
-- Run the tests:
+- Run the scripts2:
    ```bash
-   pytest tests/
+   bash task2.sh
+   ```
+
+- Run the scripts3:
+   ```bash
+   bash task3.sh
    ```
    
 ## Contributing
