@@ -26,15 +26,15 @@ jobs:
   
     - name: Run infinite.sh
       run: |
-        bash hw4/infinite.sh
+        bash infinite.sh
         
     - name: Run task1
       run: |
-        bash hw4/task1.sh
+        bash task1.sh
 
     - name: Run task3
       run: |
-        bash hw4/task3.sh
+        bash task3.sh
 
     # Update README.md with the latest run URL
     - name: Update README.md with latest run
