@@ -28,6 +28,13 @@ jobs:
       run: |
         bash hw4/task3.sh
 
+    # Update README.md with the latest run URL
+    - name: Update README.md with latest run
+      run: |
+        sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
+        sed -i "s|(https://img.shields.io/badge/pyright-.*)]|(https://img.shields.io/badge/pyright-${{ env.PYRIGHT_STATUS }})]|" README.md
+        sed -i "s|(https://img.shields.io/badge/lint-pyflakes-.*)]|(https://img.shields.io/badge/lint-pyflakes-${{ env.PYFLAKES_STATUS }})]|" README.md
+        
     # Commit the updated README.md
     - name: Commit and push changes
       run: |
