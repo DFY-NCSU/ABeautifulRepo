@@ -62,6 +62,10 @@ To set up the project locally, follow these steps:
    git clone https://github.com/DFY-NCSU/ABeautifulRepo.git
    cd ABeautifulRepo
    ```
+2. Switch to the branch:
+   ```bash
+   git checkout hw4
+   ```
 
 ## Usage
 
