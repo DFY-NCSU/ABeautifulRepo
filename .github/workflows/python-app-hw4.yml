@@ -20,6 +20,10 @@ jobs:
       with:
         ref: ${{ github.ref }}
 
+    - name: Run infinite.sh
+    run: |
+        bash hw4/infinite.sh
+
     - name: Run task1
       run: |
         bash hw4/task1.sh
