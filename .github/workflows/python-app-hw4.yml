@@ -20,6 +20,10 @@ jobs:
       with:
         ref: ${{ github.ref }}
         
+    - name: Go to hw4
+      run: |
+        cd hw4
+  
     - name: Run infinite.sh
       run: |
         bash hw4/infinite.sh
@@ -44,7 +48,7 @@ jobs:
       run: |
         git config --global user.name 'github-actions[bot]'
         git config --global user.email 'github-actions[bot]@users.noreply.github.com'
-        git add README.md
-        git commit -m "Update README.md with the latest run ID"
+        git add filtered_passengers.csv
+        git commit -m "Update filtered_passengers.csv with the latest run ID"
         git push origin ${{ github.ref }}
         
