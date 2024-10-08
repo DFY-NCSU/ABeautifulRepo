@@ -41,6 +41,7 @@ ABeautifulRepo/
 
 - `main`: Solution to homework 1.
 - `hw2`: Solution to homework 2.
+- `hw4`: Solution to homework4.
   
 ## Installation
 
