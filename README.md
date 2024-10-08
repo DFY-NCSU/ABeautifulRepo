@@ -15,9 +15,9 @@
 [![codecov](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/branch/hw2/graph/badge.svg?token=R5ERFINN0D)](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/tree/hw2)
 
 
-# ABeautifulRepo: Homework 2
+# ABeautifulRepo: Homework 4
 
-Welcome to the repository for **Homework 2** of the DFY-NCSU project. This repository contains solutions and resources for completing the assigned homework tasks. Below, you will find details about the structure of the repository, how to set it up, and instructions for running the code.
+Welcome to the repository for **Homework 4** of the DFY-NCSU project. This repository contains solutions and resources for completing the assigned homework tasks. Below, you will find details about the structure of the repository, how to set it up, and instructions for running the code.
 
 
 ## Project Overview
