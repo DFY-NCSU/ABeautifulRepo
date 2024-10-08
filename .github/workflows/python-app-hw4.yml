@@ -20,9 +20,13 @@ jobs:
       with:
         ref: ${{ github.ref }}
 
+    - name: Run task1
+      run: |
+        bash hw4/task1.sh
+
     - name: Run task3
       run: |
-        bash task3.sh
+        bash hw4/task3.sh
 
     # Commit the updated README.md
     - name: Commit and push changes
