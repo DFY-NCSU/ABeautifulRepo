@@ -57,17 +57,17 @@ To set up the project locally, follow these steps:
 
 To run the project, use the following commands:
 
-- Run the scripts1:
+- Run the task1:
    ```bash
    bash task1.sh
    ```
 
-- Run the scripts2:
+- Run the task2:
    ```bash
    bash task2.sh
    ```
 
-- Run the scripts3:
+- Run the task3:
    ```bash
    bash task3.sh
    ```
