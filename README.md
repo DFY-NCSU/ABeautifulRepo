@@ -31,10 +31,21 @@ The key feature in this work is that We will use command line tools to facilitat
 ## Directory Structure
 
 ```
-ABeautifulRepo/
-├── src/                  # Source code for the homework
-├── tests/                # Unit tests for the project
-└── README.md             # Project README file
+hw4/
+├── addresses.txt 
+├── animals.txt
+├── data.txt
+├── dataset1
+├── file.txt
+├── filtered_passengers.csv
+├── gawk_input_file.txt
+├── infinite.sh
+├── logfile.txt
+├── sed_input_file.txt
+├── task1.sh
+├── task2.sh
+├── task3.sh
+└── titanic.csv
 ```
 
 ### Branches
