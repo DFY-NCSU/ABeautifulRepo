@@ -3,9 +3,8 @@
 [![License: MIT License](https://img.shields.io/badge/license-MIT-green.svg)](https://opensource.org/license/mit)
 [![Platform: Linux](https://img.shields.io/badge/platform-linux-blue.svg)](https://www.linux.org/)
 
-### Workflow and CI Tools
+### Workflow 
 [![Workflow](https://github.com/DFY-NCSU/ABeautifulRepo/actions/workflows/python-app-hw2.yml/badge.svg)](https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/11086371765)
-[![codecov](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/branch/hw2/graph/badge.svg?token=R5ERFINN0D)](https://codecov.io/gh/DFY-NCSU/ABeautifulRepo/tree/hw2)
 
 
 # ABeautifulRepo: Homework 4
