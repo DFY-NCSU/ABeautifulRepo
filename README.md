@@ -42,7 +42,7 @@ hw4/
 ├── infinite.sh
 ├── logfile.txt
 ├── sed_input_file.txt
-├── task1.sh               ## kill the script `infinite.sh` 
+├── task1.sh               ## kill the script infinite.sh
 ├── task2.sh               ## Build a single pipeline of commands for all the tasks and store the pipeline inside
 ├── task3.sh               ## Build a single pipeline of commands for all the tasks and store the pipeline inside
 └── titanic.csv
