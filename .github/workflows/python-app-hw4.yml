@@ -19,21 +19,20 @@ jobs:
       name: Check out the repository
       with:
         ref: ${{ github.ref }}
-        
-    - name: Go to hw4
-      run: |
-        cd hw4
   
     - name: Run infinite.sh
       run: |
+        cd hw4
         bash infinite.sh
         
     - name: Run task1
       run: |
+        cd hw4
         bash task1.sh
 
     - name: Run task3
       run: |
+        cd hw4
         bash task3.sh
 
     # Update README.md with the latest run URL
