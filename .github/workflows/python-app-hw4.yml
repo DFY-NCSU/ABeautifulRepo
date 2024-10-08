@@ -2,9 +2,9 @@ name: Python application
 
 on:
   push:
-    branches: [ "hw2" ]
+    branches: [ "hw4" ]
   pull_request:
-    branches: [ "hw2" ]
+    branches: [ "hw4" ]
 
 permissions:
   contents: write  # Allows us to push changes to the repo
