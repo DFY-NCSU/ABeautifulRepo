@@ -26,8 +26,7 @@ This repository contains the implementation of solutions required for Homework 4
 
 ## Key Features
 
-The key feature in this work is that We will use command line tools to facilitate data processing. The process of cleaning, transforming, and organizing raw data into more usable formats for analysis or reporting. Often, this data needs to be progressively broken down into different shapes and forms at different stages in order to end up as meaningful information. Data processing allows us to break down complex data processing tasks into subtasks, use off-the-shelf tools to perform these subtasks, and seamlessly integrate the subtasks into the final synthesized information.
-
+The key feature in this work is that We use command-line tools to facilitate data wrangling.
 ## Directory Structure
 
 ```
