@@ -35,6 +35,11 @@ jobs:
         bash infinite.sh
         echo 'y' | bash task1.sh
 
+    - name: Run task1
+      run: |
+        cd hw4
+        bash task2.sh
+
     - name: Run task3
       run: |
         cd hw4
