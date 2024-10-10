@@ -20,6 +20,15 @@ jobs:
       with:
         ref: ${{ github.ref }}
 
+    - name: Check and delete filtered_passengers.csv if it exists
+      run: |
+        if [ -f hw4/filtered_passengers.csv ]; then
+          echo "filtered_passengers.csv exists. Deleting..."
+          rm hw4/filtered_passengers.csv
+        else
+          echo "filtered_passengers.csv does not exist."
+        fi
+
     - name: Run task1
       run: |
         cd hw4
