@@ -33,7 +33,7 @@ jobs:
       run: |
         cd hw4
         bash infinite.sh
-        bash task1.sh
+        echo 'y' | bash task1.sh
 
     - name: Run task3
       run: |
