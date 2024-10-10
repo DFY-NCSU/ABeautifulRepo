@@ -67,6 +67,8 @@ To run the project, use the following commands:
    ```bash
    bash task1.sh
    ```
+Remember if you want to test `task1.sh`, you need to run `infinite.sh` first by command `bash infinite.sh`.
+
 
 - Run the task2:
    ```bash
