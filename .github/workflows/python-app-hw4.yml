@@ -19,30 +19,19 @@ jobs:
       name: Check out the repository
       with:
         ref: ${{ github.ref }}
-  
-    - name: Run infinite.sh
-      run: |
-        cd hw4
-        bash infinite.sh
-        
+
     - name: Run task1
       run: |
         cd hw4
+        bash infinite.sh
         bash task1.sh
 
     - name: Run task3
       run: |
         cd hw4
         bash task3.sh
-
-    # Update README.md with the latest run URL
-    - name: Update README.md with latest run
-      run: |
-        sed -i "s|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs.*)|(https://github.com/DFY-NCSU/ABeautifulRepo/actions/runs/${{ github.run_id }})|" README.md
-        sed -i "s|(https://img.shields.io/badge/pyright-.*)]|(https://img.shields.io/badge/pyright-${{ env.PYRIGHT_STATUS }})]|" README.md
-        sed -i "s|(https://img.shields.io/badge/lint-pyflakes-.*)]|(https://img.shields.io/badge/lint-pyflakes-${{ env.PYFLAKES_STATUS }})]|" README.md
         
-    # Commit the updated README.md
+    # Commit the updated files
     - name: Commit and push changes
       run: |
         git config --global user.name 'github-actions[bot]'
