@@ -6,4 +6,4 @@ def test_right():
 
 
 def test_wrong():
-    assert add_numbers(1, 1) == 11
+    assert add_numbers(1, 1) == 2
